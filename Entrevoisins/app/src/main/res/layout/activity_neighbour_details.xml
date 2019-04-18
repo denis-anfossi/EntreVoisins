@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.neighbour_details.NeighbourDetailsActivity">
 
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/activity_neighbour_details_toolbar"
         android:layout_width="match_parent"
@@ -56,6 +55,15 @@
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/activity_neighbour_details_fav_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_neighbour_details_infos_card"
+        app:layout_constraintEnd_toEndOf="@+id/activity_neighbour_details_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/activity_neighbour_details_toolbar" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/activity_neighbour_details_infos_card"

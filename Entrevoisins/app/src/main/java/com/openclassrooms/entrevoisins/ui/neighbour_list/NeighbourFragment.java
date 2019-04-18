@@ -34,6 +34,7 @@ public class NeighbourFragment extends Fragment {
 
     /**
      * Create and return a new instance
+     *
      * @return @{@link NeighbourFragment}
      */
     public static NeighbourFragment newInstance(String section) {
@@ -59,7 +60,6 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         mSection = getArguments().getString(KEY_SECTION);
-        initList();
         return view;
     }
 
@@ -71,7 +71,7 @@ public class NeighbourFragment extends Fragment {
         if (mSection == "favorites") {
             List<Neighbour> favoriteNeighbors = new ArrayList<>();
             for (Neighbour n : mNeighbours) {
-                if (n.isFavoriteStatus() == true)
+                if (n.isFavoriteStatus())
                     favoriteNeighbors.add(n);
             }
             mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(favoriteNeighbors));
@@ -84,6 +84,7 @@ public class NeighbourFragment extends Fragment {
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+        initList();
     }
 
     @Override
@@ -94,6 +95,7 @@ public class NeighbourFragment extends Fragment {
 
     /**
      * Fired if the user clicks on a delete button
+     *
      * @param event
      */
     @Subscribe
