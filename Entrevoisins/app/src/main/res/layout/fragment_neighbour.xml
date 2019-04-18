@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/fragment_neighbour_layout"
     android:orientation="vertical">
 
 
@@ -32,6 +32,7 @@
         android:id="@+id/item_list_delete_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:layout_marginEnd="16dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="@+id/item_list_name"
