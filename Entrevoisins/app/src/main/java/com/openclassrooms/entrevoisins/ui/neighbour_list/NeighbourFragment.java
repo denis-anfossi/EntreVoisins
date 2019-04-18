@@ -19,22 +19,28 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class NeighbourFragment extends Fragment {
+    public static final String KEY_SECTION = "section";
 
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
 
+    private String mSection;
 
     /**
      * Create and return a new instance
      * @return @{@link NeighbourFragment}
      */
-    public static NeighbourFragment newInstance() {
+    public static NeighbourFragment newInstance(String section) {
         NeighbourFragment fragment = new NeighbourFragment();
+        Bundle args = new Bundle();
+        args.putString(KEY_SECTION, section);
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -52,6 +58,7 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        mSection = getArguments().getString(KEY_SECTION);
         initList();
         return view;
     }
@@ -61,7 +68,16 @@ public class NeighbourFragment extends Fragment {
      */
     private void initList() {
         mNeighbours = mApiService.getNeighbours();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+        if (mSection == "favorites") {
+            List<Neighbour> favoriteNeighbors = new ArrayList<>();
+            for (Neighbour n : mNeighbours) {
+                if (n.isFavoriteStatus() == true)
+                    favoriteNeighbors.add(n);
+            }
+            mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(favoriteNeighbors));
+        } else {
+            mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+        }
     }
 
     @Override
