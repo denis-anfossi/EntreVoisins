@@ -2,4 +2,8 @@
     <string name="app_name">Entrevoisins</string>
     <string name="tab_neighbour_title">My neighbours</string>
     <string name="tab_favorites_title">Favorites</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis convallis dui nec pellentesque. Aenean cursus neque id eros convallis elementum. Sed scelerisque libero in quam consectetur, vitae luctus orci feugiat.</string>
+    <string name="desc_card_title">À propos de moi</string>
+    <string name="infos_card_phone_txt">+33 7 99 42 13 21</string>
+    <string name="infos_card_website_txt">www.google.com</string>
 </resources>
