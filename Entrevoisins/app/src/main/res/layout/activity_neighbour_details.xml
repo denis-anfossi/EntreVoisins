@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/activity_neighbour_details_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="@dimen/height_toolbar"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
@@ -27,7 +27,7 @@
             <ImageView
                 android:id="@+id/activity_neighbour_details_toolbar_img"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:scaleType="centerCrop" />
 
@@ -36,10 +36,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="@dimen/size_btn_default_margin"
+                android:layout_marginTop="@dimen/size_btn_default_margin"
                 android:background="@null"
-                android:padding="8dp"
+                android:padding="@dimen/size_btn_default_margin"
                 android:src="@drawable/ic_arrow_back_24dp" />
 
             <TextView
@@ -47,11 +47,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="16dp"
-                android:padding="8dp"
+                android:layout_marginStart="@dimen/size_text_default_margin"
+                android:layout_marginBottom="@dimen/size_text_double_margin"
+                android:padding="@dimen/size_text_default_padding"
                 android:textColor="@android:color/white"
-                android:textSize="32sp"
+                android:textSize="@dimen/size_text_title"
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -60,7 +60,7 @@
         android:id="@+id/activity_neighbour_details_fav_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/size_btn_double_margin"
         app:layout_constraintBottom_toTopOf="@+id/activity_neighbour_details_infos_card"
         app:layout_constraintEnd_toEndOf="@+id/activity_neighbour_details_toolbar"
         app:layout_constraintTop_toBottomOf="@+id/activity_neighbour_details_toolbar" />
@@ -72,7 +72,7 @@
         android:layout_marginLeft="@dimen/mtrl_card_spacing"
         android:layout_marginTop="@dimen/mtrl_card_spacing"
         android:layout_marginRight="@dimen/mtrl_card_spacing"
-        android:minHeight="200dp"
+        android:minHeight="@dimen/height_min_big_card"
         app:layout_constraintTop_toBottomOf="@id/activity_neighbour_details_toolbar">
 
         <RelativeLayout
@@ -84,9 +84,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:textSize="24sp"
+                android:layout_margin="@dimen/size_text_default_margin"
+                android:padding="@dimen/size_text_default_padding"
+                android:textSize="@dimen/size_text_subtitle"
                 android:textStyle="bold" />
 
             <ImageView
@@ -94,10 +94,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/infos_card_title_txt"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:padding="8dp"
+                android:layout_marginStart="@dimen/size_img_default_margin"
+                android:layout_marginTop="@dimen/size_img_default_margin"
+                android:layout_marginBottom="@dimen/size_img_default_margin"
+                android:padding="@dimen/size_img_default_padding"
                 android:src="@drawable/ic_address_24dp" />
 
             <TextView
@@ -105,23 +105,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/infos_card_title_txt"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/size_text_default_margin"
+                android:layout_marginEnd="@dimen/size_text_default_margin"
+                android:layout_marginBottom="@dimen/size_text_default_margin"
                 android:layout_toEndOf="@id/infos_card_address_img"
-                android:padding="8dp"
+                android:padding="@dimen/size_text_default_padding"
                 android:text="Nice"
-                android:textSize="16sp" />
+                android:textSize="@dimen/size_text_description" />
 
             <ImageView
                 android:id="@+id/infos_card_phone_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/infos_card_address_txt"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:padding="8dp"
+                android:layout_marginStart="@dimen/size_img_default_margin"
+                android:layout_marginTop="@dimen/size_img_default_margin"
+                android:layout_marginBottom="@dimen/size_img_default_margin"
+                android:padding="@dimen/size_img_default_padding"
                 android:src="@drawable/ic_phone_24dp" />
 
             <TextView
@@ -129,11 +129,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/infos_card_address_txt"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/size_text_default_margin"
+                android:layout_marginEnd="@dimen/size_text_default_margin"
+                android:layout_marginBottom="@dimen/size_text_default_margin"
                 android:layout_toEndOf="@id/infos_card_phone_img"
-                android:padding="8dp"
+                android:padding="@dimen/size_text_default_padding"
                 android:text="@string/infos_card_phone_txt"
                 android:textSize="16sp" />
 
@@ -142,10 +142,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/infos_card_phone_txt"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:padding="8dp"
+                android:layout_marginStart="@dimen/size_img_default_margin"
+                android:layout_marginTop="@dimen/size_img_default_margin"
+                android:layout_marginBottom="@dimen/size_img_default_margin"
+                android:padding="@dimen/size_img_default_padding"
                 android:src="@drawable/ic_website_24dp" />
 
             <TextView
@@ -153,13 +153,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/infos_card_phone_txt"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/size_text_default_margin"
+                android:layout_marginEnd="@dimen/size_text_default_margin"
+                android:layout_marginBottom="@dimen/size_text_default_margin"
                 android:layout_toEndOf="@id/infos_card_website_img"
-                android:padding="8dp"
+                android:padding="@dimen/size_text_default_padding"
                 android:text="@string/infos_card_website_txt"
-                android:textSize="16sp" />
+                android:textSize="@dimen/size_text_description" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
@@ -170,7 +170,7 @@
         android:layout_marginLeft="@dimen/mtrl_card_spacing"
         android:layout_marginTop="@dimen/mtrl_card_spacing"
         android:layout_marginRight="@dimen/mtrl_card_spacing"
-        android:minHeight="150dp"
+        android:minHeight="@dimen/height_min_little_card"
         app:layout_constraintTop_toBottomOf="@id/activity_neighbour_details_infos_card">
 
         <LinearLayout
@@ -182,20 +182,20 @@
                 android:id="@+id/desc_card_title_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="8dp"
+                android:layout_margin="@dimen/size_text_default_margin"
+                android:padding="@dimen/size_text_default_padding"
                 android:text="@string/desc_card_title"
-                android:textSize="24sp"
+                android:textSize="@dimen/size_text_subtitle"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/des_card_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="8dp"
+                android:layout_margin="@dimen/size_text_default_margin"
+                android:padding="@dimen/size_text_default_padding"
                 android:text="@string/lorem_ipsum"
-                android:textSize="16sp" />
+                android:textSize="@dimen/size_text_description" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>
