@@ -7,7 +7,7 @@
     <dimen name="text_margin">16dp</dimen>
 
     <!-- Toolbar -->
-    <dimen name="height_toolbar">300dp</dimen>
+    <dimen name="height_toolbar">200dp</dimen>
 
     <!-- CardView -->
     <dimen name="height_min_big_card">200dp</dimen>
