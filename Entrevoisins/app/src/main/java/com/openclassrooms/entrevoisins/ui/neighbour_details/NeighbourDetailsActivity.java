@@ -73,8 +73,8 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         }
 
         mFavFab.setOnClickListener(v -> {
-            mNeighbour.setFavoriteStatus(!mNeighbour.isFavoriteStatus());
             mApiService.changeNeighbourFavoriteStatus(mNeighbour);
+            mNeighbour.setFavoriteStatus(!mNeighbour.isFavoriteStatus());
             configureFavFab();
         });
     }
