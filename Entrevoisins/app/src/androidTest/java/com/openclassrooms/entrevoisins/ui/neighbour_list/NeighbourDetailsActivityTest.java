@@ -5,6 +5,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -25,7 +27,10 @@ import static org.hamcrest.core.IsNull.notNullValue;
 @RunWith(AndroidJUnit4.class)
 public class NeighbourDetailsActivityTest {
 
+    private static int idNeighbourToTest = 6;
+
     private ListNeighbourActivity mActivity;
+    private NeighbourApiService mService;
 
     @Rule
     public ActivityTestRule<ListNeighbourActivity> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity.class);
@@ -34,12 +39,15 @@ public class NeighbourDetailsActivityTest {
     public void setUp() {
         mActivity = mActivityTestRule.getActivity();
         assertThat(mActivity, notNullValue());
+
+        mService = DI.getNewInstanceApiService();
+        assertThat(mService, notNullValue());
     }
 
     @Test
     public void neighbourDetailsActivity_isDisplayed() {
         onView(allOf(withId(R.id.list_neighbours), isDisplayed()))
-                .perform(actionOnItemAtPosition(6, click()));
+                .perform(actionOnItemAtPosition(idNeighbourToTest, click()));
 
         onView(withId(R.id.activity_neighbours_details)).check(matches(isDisplayed()));
     }
@@ -47,10 +55,10 @@ public class NeighbourDetailsActivityTest {
     @Test
     public void neighbourDetailsActivity_nameIsDisplayed() {
         onView(allOf(withId(R.id.list_neighbours), isDisplayed()))
-                .perform(actionOnItemAtPosition(6, click()));
+                .perform(actionOnItemAtPosition(idNeighbourToTest, click()));
 
         onView(withId(R.id.activity_neighbours_details)).check(matches(isDisplayed()));
-        onView(withId(R.id.activity_neighbour_details_toolbar_txt)).check(matches(withText("Laetitia")));
-        onView(withId(R.id.infos_card_title_txt)).check(matches(withText("Laetitia")));
+        onView(withId(R.id.activity_neighbour_details_toolbar_txt)).check(matches(withText(mService.getNeighbours().get(idNeighbourToTest).getName())));
+        onView(withId(R.id.infos_card_title_txt)).check(matches(withText(mService.getNeighbours().get(idNeighbourToTest).getName())));
     }
 }
